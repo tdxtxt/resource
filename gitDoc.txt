@@ -1,6 +1,6 @@
 git教程
 
-版本控制原理：工作区、暂存区、分支的概念，add、commit命令的操作原理
+版本控制原理：工作区、暂存区、版本库(分支+暂存区)的概念，add、commit命令的操作原理
 
 安装
 配置本地提交账号
@@ -20,14 +20,15 @@ git config --global user.email "ton@qq.com"
 查看文件变化
 1、使用git status查看是仓库当前的状态，告诉你那个文件被修改了
 2、使用git diff查看仓库文件修改了什么内容
-修改文件,切记一定要记得提交
-1、修改文件名称 git mv <old-file> <new-file>
-2、删除文件 git rm <file> 
+修改文件,切记一定要记得commit
+1、修改版本库文件名称 git mv <old-file> <new-file>
+2、工作区的文件删除了，但版本库还没有，要在版本库中删除该文件 git rm <file> 
+3、工作区的文件删除了，但版本库还没有，要把文件恢复到工作区 git checkout -- <file>
 版本日志查看
 1、git log查看日志，可以使用git log --pretty=oneline单行查看，注意每次提交都有一个16位的id
 版本回退
 1、更新到指定版本，前提是必须记住那个版本的id，可以通过git log查看，也可以通过git reflog查看，使用命令  git reset --hard <commitId>
 2、回滚版本，通过git reset --hard HEAD~<前?个版本>
 撤销
-1、当你乱写工作区，但还没add到暂存区，可以使用 git checkout -- <file> 撤销工作区到上一次commit或add操作时的内容
+1、当你乱写工作区，但还没add到暂存区，可以使用 git checkout -- <file> 从版本库里的最近一个版本(add或commit)替换到工作区
 2、当你乱写工作区，并且还add到暂存区，可以使用 git reset HEAD <file> 撤销暂存区本次的add操作内容，然后再使用步骤1
