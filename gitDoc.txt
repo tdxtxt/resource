@@ -29,3 +29,5 @@ git config --global user.email "ton@qq.com"
 1、更新到指定版本，前提是必须记住那个版本的id，可以通过git log查看，也可以通过git reflog查看，使用命令  git reset --hard <commitId>
 2、回滚版本，通过git reset --hard HEAD~<前?个版本>
 撤销
+1、当你乱写工作区，但还没add到暂存区，可以使用 git checkout -- <file> 撤销工作区到上一次commit或add操作时的内容
+2、当你乱写工作区，并且还add到暂存区，可以使用 git reset HEAD <file> 撤销暂存区本次的add操作内容，然后再使用步骤1
