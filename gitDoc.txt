@@ -21,4 +21,3 @@ git config --global user.email "ton@qq.com"
 1、修改文件名称 git mv <old-file> <new-file>
 2、删除文件 git rm <file> 
 版本回退
-1234
