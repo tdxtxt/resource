@@ -20,4 +20,6 @@ git config --global user.email "ton@qq.com"
 修改文件,切记一定要记得提交
 1、修改文件名称 git mv <old-file> <new-file>
 2、删除文件 git rm <file> 
+版本日志查看
+1、git log查看日志，可以使用git log --pretty=oneline单行查看，注意每次提交都有一个16位的id
 版本回退
