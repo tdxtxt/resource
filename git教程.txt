@@ -1,0 +1,12 @@
+git教程
+安装
+配置本地提交账号
+git config --global user.name "ton"
+git config --global user.email "ton@qq.com"
+
+创建仓库
+1、使用cd命令切换到你想要的目录
+2、使用mkdir {dirname} 创建你的目录
+3、使用cd命令进入的目录
+4、使用git init命令把该目录变为可管理的仓库
+5、使用ls -ah可以查看该目录多了一个.git目录文件，默认是隐藏的
