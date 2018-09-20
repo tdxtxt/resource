@@ -1,4 +1,7 @@
 git教程
+
+版本控制原理：工作区、暂存区、分支的概念，add、commit命令的操作原理
+
 安装
 配置本地提交账号
 git config --global user.name "ton"
@@ -23,5 +26,6 @@ git config --global user.email "ton@qq.com"
 版本日志查看
 1、git log查看日志，可以使用git log --pretty=oneline单行查看，注意每次提交都有一个16位的id
 版本回退
-1、更新到指定版本，前提是必须记住那个版本的id，可以通过git log查看，使用命令  git reset --hard <commitId>
+1、更新到指定版本，前提是必须记住那个版本的id，可以通过git log查看，也可以通过git reflog查看，使用命令  git reset --hard <commitId>
 2、回滚版本，通过git reset --hard HEAD~<前?个版本>
+撤销
