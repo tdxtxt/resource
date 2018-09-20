@@ -14,3 +14,8 @@ git config --global user.email "ton@qq.com"
 1、在仓库创建文件
 2、使用git add <file>命令添加该文件到仓库，成功后无任何提示 【git add ton.txt】
 3、使用git commit -m <message>命令提交该文件到仓库，成功之后 1 file changed, 12 insertions(+) 的提示 【git commit -m "提交说明" ton.txt】
+查看文件变化
+1、使用git status查看是仓库当前的状态，告诉你那个文件被修改了
+2、使用git diff查看仓库文件修改了什么内容
+版本回退
+1234
