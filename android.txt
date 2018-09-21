@@ -1,0 +1,102 @@
+https://yq.aliyun.com/articles/211914
+https://github.com/JsonChao/Awesome-Android-Interview
+
+https://zhuanlan.zhihu.com/p/25671699
+Java 虚拟机、Art、Dalvik 他们的区别。
+
+
+activity相关:
+   1、生命周期(准备创建--onCreate--已创建--onStart--开始--onResume--正常--onPasue--暂停--onStop--停止--onDstory--死亡)
+   2、横竖屏切换生命周期调用
+不设置Activity的android:configChanges时，切屏会重新回掉各个生命周期，切横屏时会执行一次，切竖屏时会执行两次
+设置Activity的android:configChanges=”orientation”时，切屏还是会调用各个生命周期，切换横竖屏只会执行一次
+设置Activity的android:configChanges=”orientation |keyboardHidden”时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法
+
+
+   3、activity被回收优先级
+   4、activity启动模式：标准、栈顶单例、桟单例、实例单例 	http://blog.csdn.net/guolin_blog/article/details/41087993
+
+Binder相关: http://weishu.me/2016/01/12/binder-index-for-newer/
+   Service远程端:提供的服务接口 + Binder → nativie层的Binder框架（将binder的句柄注入到内核中）
+   Client客户端：建立连接获得Binder →  nativie层的Binder框架（获取binder在内核中的句柄）
+
+View的绘制流程:
+可以分两部分，第一部分是使用api，绘图图形（术）
+  第二部分是绘制顺序（道）：http://hencoder.com/ui-1-5/
+  在绘制过程中，每一个 ViewGroup 会先调用自己的 onDraw() 来绘制完自己的主体之后再去绘制它的子 View。每个 View 和 ViewGroup 都  会先调用onDraw()方法来绘制主体，再。
+  1、背景：它的绘制发生在一个叫 drawBackground() 的方法里，但这个方法是 private 的，不能重写
+  2、主体（onDraw()）：负责自身主题内容绘制，那么关于super.onDraw()放置的位置关系的绘制覆盖的层级。 
+  3、子view( dispatchDraw() ):调用 dispatchDraw() 方法来绘制子 View
+  4、滑动边缘渐变和滑动条(onDrawForeground()):可以通过 xml 的 android:scrollbarXXX 系列属性或 Java 代码的  View.setXXXScrollbarXXX() 系列方法来设置
+  5、前景(onDrawForeground())：可以通过 xml 的 android:foreground 属性或 Java 代码的  View.setForeground() 方法来设置。
+  总体而言：draw()方法是以上所有方法的总调度方法，在draw()方法中调用了所有的绘制方法
+    public void draw(Canvas canvas) {  
+        ...
+       drawBackground(Canvas); // 绘制背景（不能重写）
+       onDraw(Canvas); // 绘制主体
+       dispatchDraw(Canvas); // 绘制子 View
+       onDrawForeground(Canvas); // 绘制滑动相关和前景
+        ...
+    }
+    在 ViewGroup 的子类中重写除 dispatchDraw() 以外的绘制方法时，可能需要调用  setWillNotDraw(false)；
+    在重写的方法有多个选择时，优先选择 onDraw()。
+              
+View的布局:(例子：瀑布式标签)计算控件实际尺寸和位置
+
+事件机制:http://blog.csdn.net/morgan_xww/article/details/9372285
+
+触摸反馈:
+
+动画:Android3.0之前有2种，3.0后有3种。
+	FrameAnimation（逐帧动画）：将多张图片组合起来进行播放，类似于早期电影的工作原理，很多App的loading是采用这种方式。
+
+	TweenAnimation（补间动画）：可以在一个视图容器内执行一系列简单变换 位置、大小、旋转、透明度
+	
+PropertyAnimation（属性动画）：属性动画不再仅仅是一种视觉效果了，而是一种不断地对值进行操作的机制，并将值赋到指定对象的指定属性上，可以是任意对象的任意属性。Interpolator和ViewPropertyAnimator的用法   ValueAnimator和ObjectAnimator的高级用法
+
+插件化原理解析:http://weishu.me/2016/01/28/understand-plugin-framework-overview/
+	       https://github.com/ljqloveyou123/LiujiaqiAndroid
+	代码加载
+	资源加载
+
+<include>、<viewStub>、<merge>标签区别，使用场景
+include标签:常用于将布局中的公共部分提取出来供其他layout共用，以实现布局模块化，这在布局编写方便提供了大大的便利。
+viewStub标签：与include不同，在没调用viewStub.inflate()方法前，他包含的布局不会被解析，不会显示出来
+merge标签:与include不同，在解析时，系统忽略<merge />节点，直接解析他的子元素。 
+
+JVM的内存分布及垃圾回收机制：
+
+
+Android消息机制：主要用于UI线程和子线程之间交互
+https://zhuanlan.zhihu.com/p/25222485
+
+
+Android性能优化：http://androidperformance.com/2017/10/19/Android-performance-optimization-skills-and-tools.html
+    1、使用SparseArray和ArrayMap代替HashMap  http://blog.csdn.net/u010687392/article/details/47809295  
+    2、启动优化：http://androidperformance.com/2015/12/29/Android应用启动优化-一种DelayLoad的实现和原理-下篇.html
+	getWindow().getDecorView().post(new Runnable() {
+		@Override
+		public void run() {
+        	myHandler.post(mLoadingRunnable);
+    		}
+	});
+    3、内存优化(内存性能主要包括内存泄漏， 内存抖动， 内存持续增长(但GC后会下降)， 内存占用过大等问题。)
+	http://www.jianshu.com/p/0df5ad0d2e6a
+
+多线程中，线程安全。http://blog.csdn.net/weixin_36244867/article/details/72832632
+线程池，需要理解里面各种参数的含义，适用场景。
+
+Rxjava：http://gank.io/post/560e15be2dca930e00da1083
+
+JSBridge 相关的东西。http://blog.csdn.net/sbsujjbcy/article/details/50752595
+
+MVP架构：http://blog.csdn.net/yulong0809/article/details/78622428
+
+如何保证service不被杀死:
+1、提升优先级(a、设置service优先等级，配置android:priority属性为最高1000；b、监听锁屏事件，开启1像素的activity，解锁销毁activity；c、启动前台service)
+2、死后重启（a、注册高频广播，唤起进程，如网络变换，解锁屏幕，开机等；b、双进程呼唤；c、依靠系统唤起；d、onDestroy方法中重启service：service+broadcast方式，就是当servcie走onDestory的时候，发送一个自定义广播，当收到广播的时候重启service）
+3、依靠第三方：根据终端不同，在小米手机接入小米推送、华为手机接入华为推送、其他手机接入腾讯信鸽或极光推送与小米推送做A/B Test;
+
+ButterKnife原理:没使用反射，对性能影响很小，使用注解处理器，在编译时，读入java源码，解析注解，然后生成新的java代码，
+
+算法相关: 1、排序 https://www.jianshu.com/p/ae97c3ceea8d
