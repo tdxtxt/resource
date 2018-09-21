@@ -26,6 +26,7 @@ git config --global user.email "ton@qq.com"
 3、工作区的文件删除了，但版本库还没有，要把文件恢复到工作区 git checkout -- <file>
 版本日志查看
 1、git log查看日志，可以使用git log --pretty=oneline单行查看，注意每次提交都有一个16位的id
+2、git log --graph 查看分支合并图
 版本回退
 1、更新到指定版本，前提是必须记住那个版本的id，可以通过git log查看，也可以通过git reflog查看，使用命令  git reset --hard <commitId>
 2、回滚版本，通过git reset --hard HEAD~<前?个版本>
