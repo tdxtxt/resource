@@ -35,4 +35,6 @@ git config --global user.email "ton@qq.com"
 远程仓库
 1、使用github作为远程仓库
 1.1、创建GitHub账号
-1.2、只允许你提交内容，就必须要配置ssh协议秘钥，方法：查看你的电脑用户主目录中有没有.ssh目录，若没有，执行 ssh-keygen -t rsa -C "ton@qq.com",一路回车，在用户目录下会创建id_rsa和id_rsa.pub两个文件，到时候你只需要把公钥id_rsa.pub文件内容配置到github中就可以了
+1.2、配置只允许你提交内容，就必须要配置ssh协议秘钥，方法：查看你的电脑用户主目录中有没有.ssh目录，若没有，执行 ssh-keygen -t rsa -C "ton@qq.com",一路回车，在用户目录下会创建id_rsa和id_rsa.pub两个文件，到时候你只需要把公钥id_rsa.pub文件内容配置到github中就可以了
+1.3、在github中创建仓库，成功之后会提示让你关联你的本地仓库，后面有执行命令   关联：git remote add origin <远程仓库的地址>     推送内容：git push -u origin master（由于第一次远程仓库是空的，所以添加了-u的参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。以后只要本地提交了，推送到远程只需执行 git push origin master）
+
