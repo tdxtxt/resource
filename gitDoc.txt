@@ -32,3 +32,7 @@ git config --global user.email "ton@qq.com"
 撤销
 1、当你乱写工作区，但还没add到暂存区，可以使用 git checkout -- <file> 从版本库里的最近一个版本(add或commit)替换到工作区
 2、当你乱写工作区，并且还add到暂存区，可以使用 git reset HEAD <file> 撤销暂存区本次的add操作内容，然后再使用步骤1
+远程仓库
+1、使用github作为远程仓库
+1.1、创建GitHub账号
+1.2、只允许你提交内容，就必须要配置ssh协议秘钥，方法：查看你的电脑用户主目录中有没有.ssh目录，若没有，执行 ssh-keygen -t rsa -C "ton@qq.com",一路回车，在用户目录下会创建id_rsa和id_rsa.pub两个文件，到时候你只需要把公钥id_rsa.pub文件内容配置到github中就可以了
