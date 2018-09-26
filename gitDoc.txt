@@ -45,13 +45,21 @@ git config --global user.email "ton@qq.com"
 1、master分支主分支，是非常稳定的，仅仅用于发布新版本，平时不能再该分支上修改内容
 2、dev分支为开发分支，是不稳定的，这条分支可以是一条或多条，每个开发人员自己拥有一条开发分支，每次合并都在开发分支上进行小组合并，发布版本是，才合并到master分支上
 3、推荐本地分支master和dev要推送到远程仓库，随时同步，其他分支可以自己在本地上玩
+标签管理
+1、概念:之前版本回退的时候需要一个commitid，由于这个id不好记，那么就引入标签的概率，相当于别名，用于记住某个版本，便于以后回滚版本
+2、创建标签：首先切换到需要打标签的分支上，使用 git tag -a <标签名> -m <标签说明> 创建新标签，此标签默认打到最近一次commit上，也可使用git tag -a <标签名> -m <标签说明> <commitId>，当然可以使用简洁的命令 git tag <标签名>
+3、查看所有标签:git tag，查看标签说明：git show <标签名>
+4、删除标签：git tag -d <标签名>
 远程仓库
 1、本地仓库关联到远程仓库
 	a、创建GitHub账号
 	b、配置只允许你提交内容，就必须要配置ssh协议秘钥，方法：查看你的电脑用户主目录中有没有.ssh目录，若没有，执行 ssh-keygen -t rsa -C "ton@qq.com",一路回车，在用户目录下会创建id_rsa和id_rsa.pub两个文件，到时候你只需要把公钥id_rsa.pub文件内容配置到github中就可以了
 	c、在github中创建仓库，成功之后会提示让你关联你的本地仓库
-	d、将本地仓库关联到远程仓库上：git remote add origin <远程仓库的地址>     		
-2、远程仓库克隆到本地，切换到你要放项目的目录，然后使用 git clone <远程仓库的地址> 进行克隆，注意这里克隆分两种协议，ssh协议是很快的，https协议比较慢
-3、更新(拉取)内容到本地仓库：git pull
-3、提交(推送)内容到远程仓库：git push -u origin <master/dev>（由于第一次远程仓库是空的，所以添加了-u的参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送可以简化命令 git push origin <master/dev>）
-4、查看远程仓库信息:git remote 或者 git remote -v
+	d、将本地仓库关联到远程仓库上：git remote add origin <远程仓库的地址>   
+	e、本地创建和远程对应的分支：git checkout -b <本地分支名称> origin/<远程分支名称>
+    f、本地分支与远程分支建立关联: git branch --set-upstream-to <本地分支名称> origin/<远程分支名称>
+2、查看远程仓库信息:git remote 或者 git remote -v
+3、远程仓库克隆到本地，切换到你要放项目的目录，然后使用 git clone <远程仓库的地址> 进行克隆，注意这里克隆分两种协议，ssh协议是很快的，https协议比较慢
+4、更新(拉取)内容到本地仓库：git pull，如果提示"no tracking information"，说明本地分支和远程分支的链接关系没有创建，此时可能合并有冲突，但这个处理方法和合并分支处理相同
+5、提交(推送)内容到远程仓库：git push -u origin <远程分支名称>（由于第一次远程仓库是空的，所以添加了-u的参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送可以简化命令 git push origin <master/dev>）
+
