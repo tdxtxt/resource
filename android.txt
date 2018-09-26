@@ -1,5 +1,6 @@
 https://yq.aliyun.com/articles/211914
 https://github.com/JsonChao/Awesome-Android-Interview
+https://www.jianshu.com/p/88e32ef66ef2  知识问题集合
 
 https://zhuanlan.zhihu.com/p/25671699
 Java 虚拟机、Art、Dalvik 他们的区别。
