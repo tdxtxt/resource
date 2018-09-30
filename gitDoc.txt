@@ -62,4 +62,7 @@ git config --global user.email "ton@qq.com"
 3、远程仓库克隆到本地，切换到你要放项目的目录，然后使用 git clone <远程仓库的地址> 进行克隆，注意这里克隆分两种协议，ssh协议是很快的，https协议比较慢
 4、更新(拉取)内容到本地仓库：git pull origin <远程分支名称>，如果提示"no tracking information"，说明本地分支和远程分支的链接关系没有创建，此时可能合并有冲突，但这个处理方法和合并分支处理相同
 5、提交(推送)内容到远程仓库：git push -u origin <远程分支名称>（由于第一次远程仓库是空的，所以添加了-u的参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送可以简化命令 git push origin <master/dev>）
-
+6、删除远程仓库: git remote rm origin
+使用远程仓库github
+1、Fork开源仓库：意思是将别人(官方)开源库克隆一个在自己账户下，然后就可以操作自己克隆的库了，当然你想要推送给别人(官方)的开源库上,需要推送一个pull request，看别人是否采纳
+使用远程仓库码云
