@@ -60,6 +60,6 @@ git config --global user.email "ton@qq.com"
     f、本地分支与远程分支建立关联: git branch --set-upstream-to <本地分支名称> origin/<远程分支名称>
 2、查看远程仓库信息:git remote 或者 git remote -v
 3、远程仓库克隆到本地，切换到你要放项目的目录，然后使用 git clone <远程仓库的地址> 进行克隆，注意这里克隆分两种协议，ssh协议是很快的，https协议比较慢
-4、更新(拉取)内容到本地仓库：git pull，如果提示"no tracking information"，说明本地分支和远程分支的链接关系没有创建，此时可能合并有冲突，但这个处理方法和合并分支处理相同
+4、更新(拉取)内容到本地仓库：git pull origin <远程分支名称>，如果提示"no tracking information"，说明本地分支和远程分支的链接关系没有创建，此时可能合并有冲突，但这个处理方法和合并分支处理相同
 5、提交(推送)内容到远程仓库：git push -u origin <远程分支名称>（由于第一次远程仓库是空的，所以添加了-u的参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送可以简化命令 git push origin <master/dev>）
 
