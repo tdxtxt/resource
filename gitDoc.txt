@@ -20,10 +20,11 @@ git config --global user.email "ton@qq.com"
 查看文件变化
 1、使用git status查看是仓库当前的状态，告诉你那个文件被修改了
 2、使用git diff查看仓库文件修改了什么内容
-修改文件,切记一定要记得commit
+修改文件名,切记一定要记得commit
 1、修改版本库文件名称 git mv <old-file> <new-file>
-2、工作区的文件删除了，但版本库还没有，要在版本库中删除该文件 git rm <file> 
-3、工作区的文件删除了，但版本库还没有，要把文件恢复到工作区 git checkout -- <file>
+删除/恢复文件
+1、工作区的文件删除了，但版本库还没有，要在版本库中删除该文件 git rm <file> 
+2、工作区的文件删除了，但版本库还没有，要把文件恢复到工作区 git checkout -- <file>
 版本日志查看
 1、git log查看日志，可以使用git log --pretty=oneline单行查看，注意每次提交都有一个16位的id
 2、git log --graph 查看分支合并图，可以使用git log --graph --pretty=oneline --abbrev-commit单行精简查看
