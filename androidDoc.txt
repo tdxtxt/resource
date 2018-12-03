@@ -70,6 +70,7 @@ JVM的内存分布及垃圾回收机制：
 
 Android消息机制：主要用于UI线程和子线程之间交互
 https://zhuanlan.zhihu.com/p/25222485
+https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650242304&idx=1&sn=26611df54590f2343dc90f6ba006a488&chksm=88638c6fbf140579d3fdf4522c3e5a4e303e8dd291781f29816684b0d6275206e9a25a8cb139&scene=38#wechat_redirect
 
 
 Android性能优化：http://androidperformance.com/2017/10/19/Android-performance-optimization-skills-and-tools.html
