@@ -67,9 +67,7 @@ merge标签:与include不同，在解析时，系统忽略<merge />节点，直接解析他的子元素。
 
 JVM的内存分布及垃圾回收机制：
 
-
-Android消息机制：主要用于UI线程和子线程之间交互
-https://zhuanlan.zhihu.com/p/25222485
+Android消息机制(Handler)：主要用于UI线程和子线程之间交互
 https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650242304&idx=1&sn=26611df54590f2343dc90f6ba006a488&chksm=88638c6fbf140579d3fdf4522c3e5a4e303e8dd291781f29816684b0d6275206e9a25a8cb139&scene=38#wechat_redirect
 
 
@@ -89,16 +87,23 @@ Android性能优化：http://androidperformance.com/2017/10/19/Android-performance-op
 线程池，需要理解里面各种参数的含义，适用场景。
 
 Rxjava：http://gank.io/post/560e15be2dca930e00da1083
+Retrofit: https://www.jianshu.com/p/0dcd0b703ca7
+
+ButterKnife原理:没使用反射，对性能影响很小，使用注解处理器，在编译时，读入java源码，解析注解，然后生成新的java代码。
 
 JSBridge 相关的东西。http://blog.csdn.net/sbsujjbcy/article/details/50752595
 
 MVP架构：http://blog.csdn.net/yulong0809/article/details/78622428
+MVVM架构：https://www.jianshu.com/p/5dcdc5798d85
+
+路由架构:通过预编译技术apt，在给activity上添加注解，编译时会生成对应activity跳转指令和对应类全路径到本地库中，其他module在跳转是直接使用指令跳转。
+https://www.jianshu.com/p/e2d93259dc34
 
 如何保证service不被杀死:
 1、提升优先级(a、设置service优先等级，配置android:priority属性为最高1000；b、监听锁屏事件，开启1像素的activity，解锁销毁activity；c、启动前台service)
 2、死后重启（a、注册高频广播，唤起进程，如网络变换，解锁屏幕，开机等；b、双进程呼唤；c、依靠系统唤起；d、onDestroy方法中重启service：service+broadcast方式，就是当servcie走onDestory的时候，发送一个自定义广播，当收到广播的时候重启service）
 3、依靠第三方：根据终端不同，在小米手机接入小米推送、华为手机接入华为推送、其他手机接入腾讯信鸽或极光推送与小米推送做A/B Test;
 
-ButterKnife原理:没使用反射，对性能影响很小，使用注解处理器，在编译时，读入java源码，解析注解，然后生成新的java代码，
+
 
 算法相关: 1、排序 https://www.jianshu.com/p/ae97c3ceea8d
