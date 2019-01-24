@@ -106,4 +106,5 @@ https://www.jianshu.com/p/e2d93259dc34
 
 
 
-算法相关: 1、排序 https://www.jianshu.com/p/ae97c3ceea8d
+算法相关: 1、排序 https://www.jianshu.com/p/ae97c3ceea8
+http协议：http://www.ruanyifeng.com/blog/2016/08/http.html?tdsourcetag=s_pctim_aiomsg
