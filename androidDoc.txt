@@ -4,6 +4,10 @@ https://www.jianshu.com/p/88e32ef66ef2  ÖªÊ¶ÎÊÌâ¼¯ºÏ
 
 https://zhuanlan.zhihu.com/p/25671699
 Java ÐéÄâ»ú¡¢Art¡¢Dalvik ËûÃÇµÄÇø±ð¡£
+Java ÐéÄâ»ú½á¹¹£ºjava¶Ñ¡¢javaÕ»¡¢·½·¨Çø¡¢±¾µØ·½·¨Õ»¡¢pc¼Ä´æÆ÷¡¢ÄÚ´æ¡¢Àà¼ÓÔØÏµÍ³¡¢À¬»ø»ØÊÕÏµÍ³¡¢¡¢Ö´ÐÐÒýÇæ
+java»ØÊÕ²ÉÓÃ»ØÊÕ¸´ÖÆËã·¨£ºÁ½¿éÏàÍ¬´óÐ¡µÄÄÚ´æ¿Õ¼ä£¬gc»ØÊÕÊ±
+DalvikÐéÄâ»ú£ºjava-class-dex
+    Çø±ð£ºDalvikÐéÄâ»ú»ùÓÚ¼Ä´æÆ÷£¬¶øJVM»ùÓÚÕ»£¬ÒòÎªappÔÚÊÖ»úÖÐ¿ÉÄÜÔËÐÐÒ»»á¾Í±»¹Ø±Õ£¬¶øjava³ÌÐòÔËÐÐ¼¸¸öÔÂ
 
 
 activityÏà¹Ø:
@@ -59,6 +63,7 @@ PropertyAnimation£¨ÊôÐÔ¶¯»­£©£ºÊôÐÔ¶¯»­²»ÔÙ½ö½öÊÇÒ»ÖÖÊÓ¾õÐ§¹ûÁË£¬¶øÊÇÒ»ÖÖ²»¶ÏµØ¶
 	       https://github.com/ljqloveyou123/LiujiaqiAndroid
 	´úÂë¼ÓÔØ
 	×ÊÔ´¼ÓÔØ
+ÈÈÐÞ¸´²»ÖØÆôapp£º	
 
 <include>¡¢<viewStub>¡¢<merge>±êÇ©Çø±ð£¬Ê¹ÓÃ³¡¾°
 include±êÇ©:³£ÓÃÓÚ½«²¼¾ÖÖÐµÄ¹«¹²²¿·ÖÌáÈ¡³öÀ´¹©ÆäËûlayout¹²ÓÃ£¬ÒÔÊµÏÖ²¼¾ÖÄ£¿é»¯£¬ÕâÔÚ²¼¾Ö±àÐ´·½±ãÌá¹©ÁË´ó´óµÄ±ãÀû¡£
