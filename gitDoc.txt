@@ -15,7 +15,7 @@ git config --global user.email "ton@qq.com"
 5、使用ls -ah可以查看该目录多了一个.git目录文件，默认是隐藏的
 提交文件
 1、在仓库创建文件
-2、使用git add <file>命令添加该文件到仓库，成功后无任何提示 【git add ton.txt】
+2、使用git add <file>命令添加单个文件到仓库，成功后无任何提示 【git add ton.txt】；使用git add -A 命令添加当前文件夹下所有文件到仓库
 3、使用git commit -m <message>命令提交该文件到仓库，成功之后 1 file changed, 12 insertions(+) 的提示 【git commit -m "提交说明" ton.txt】
 查看文件变化
 1、使用git status查看是仓库当前的状态，告诉你那个文件被修改了
